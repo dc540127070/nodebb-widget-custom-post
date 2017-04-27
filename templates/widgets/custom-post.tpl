@@ -1,2 +1,2 @@
 
-<div><!-- IF sulg -->{sulg}<!-- ENDIF sulg --><!-- IF template -->{template}<!-- ENDIF template --></div>
+<div><!-- IF data.sulg -->{data.sulg}<!-- ENDIF data.sulg --><!-- IF data.template -->{data.template}<!-- ENDIF data.template --></div>
