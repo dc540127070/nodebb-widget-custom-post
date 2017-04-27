@@ -37,7 +37,7 @@
 
 		var data = params.data.data;
 		var cid = params.req.query.cid+"";
-		var pid;
+		var data;
 
 		try{
 			data = JSON.parse(data);
@@ -47,13 +47,22 @@
 			callback(e);
 		}
 		
-		if(pid){
-			topics.getTopicData([pid], function(err,post){
-				if(err){
-					callback(err);
-				}
-				app.render('widgets/custom-post',{data:post},callback);
-			}); 
+		if(data){
+			if(data.pid){
+				topics.getTopicData([data.pid], function(err,post){
+					if(err){
+						callback(err);
+					}
+					app.render('widgets/custom-post',{data:post},callback);
+				}); 
+			}else{
+				topics.getTopicData([data.pid], function(err,post){
+					if(err){
+						callback(err);
+					}
+					app.render('widgets/custom-post',{data:data.template},callback);
+				}); 
+			}
 		}else{
 			callback();
 		}
