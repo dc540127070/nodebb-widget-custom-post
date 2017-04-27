@@ -43,7 +43,7 @@
 			data = JSON.parse(data);
 			console.log(data)
 			console.log(cid)
-			pid = data.cid;
+			pid = data[cid];
 			console.log(pid)
 		}catch(e){
 			callback(e);
