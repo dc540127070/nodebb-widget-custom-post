@@ -53,7 +53,7 @@
 		// 	callback(e);
 		// }
         //  getCustomPost(params.data.data, function(err, customPost) {
-		// 	app.render('widgets/custom-post', {data:customPost}, callback);
+			app.render('widgets/custom-post', {data:params}, callback);
 		// });
      }
 
