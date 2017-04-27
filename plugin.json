@@ -7,7 +7,7 @@
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
         {"hook": "filter:widgets.getWidgets", "method": "defineWidgets"},
-        {"hook": "filter:widget.render:renderCustomPost", "method": "renderCustomPost"}
+        {"hook": "filter:widget.render:custompost", "method": "renderCustomPost"}
 	],
 	"templates": "./templates",
 	"acpScripts": [
