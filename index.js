@@ -1,7 +1,8 @@
 (function() {
 	'use strict';
 
-	var db = module.parent.require('./database.js'),
+	var winston = module.parent.require('winston'),
+			db = module.parent.require('./database.js'),
 			async = module.parent.require('async'),
 			path = require('path'),
 			topics = module.parent.require('./topics'),
