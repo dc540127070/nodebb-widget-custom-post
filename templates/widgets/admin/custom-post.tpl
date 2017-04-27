@@ -10,11 +10,11 @@ var template = '<div class="customblock">'+
         '<input type="textarea" class="form-control" name="postId" placeholder="postId" />'+
     '</div>'+
     '<div class="checkbox">'+
-    '<input name="use-template" type="checkbox" onchange=\'$(this).parent().parent().find(".template").toggle()\'><label> use template ?</label>'+
+    '<label><input name="use-template" type="checkbox" onchange=\'$(this).parent().parent().parent().find(".customtemplate").toggle()\'>use template ?</label>'+
     '</div>'+
-    '<div class="template" style="display:none;">'+
+    '<div class="customtemplate" style="display:none;">'+
         '<label>template:</label>'+
-        '<input type="textarea" class="form-control" name="template" placeholder="postId" />'+
+        '<input type="textarea" class="form-control" name="customtemplate" placeholder="postId" />'+
     '</div>'+
 '</div>';
 </script>
@@ -31,11 +31,11 @@ var template = '<div class="customblock">'+
             <input type="textarea" class="form-control" name="postId" placeholder="postId" />
         </div>
         <div class="checkbox">
-        <input name="use-template" type="checkbox" onchange='$(this).parent().parent().find(".template").toggle()'><label>use template ?</label>
+        <label><input name="use-template" type="checkbox" onchange='$(this).parent().parent().parent().find(".customtemplate").toggle()'>use template ?</label>
         </div>
-        <div class="template" style="display:none;">
+        <div class="customtemplate" style="display:none;">
             <label>template:</label>
-            <input type="textarea" class="form-control" name="template" placeholder="postId" />
+            <input type="textarea" class="form-control" name="customtemplate" placeholder="postId" />
         </div>
     </div>
 </div>
