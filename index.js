@@ -39,15 +39,20 @@
 	var CustomPost = {};
 
 	CustomPost.init = function (data, callback) {
+		
 		app = data.router;
+
+		console.log(app);
 
         callback();
 	};
 
     CustomPost.renderCustomPost = function(params,callback){
 		winston.info("render post " );
-		winston.info(app);
-		winston.info(params);
+		console.log(app);
+		console.log(params);
+		
+
 		
 		// function renderAdmin(req, res) {
         //     res.render('admin/plugins/sso-qq', {
