@@ -10,7 +10,7 @@
             <input type="textarea" class="form-control" name="postId" placeholder="postId" />
         </div>
         <div class="checkbox">
-        <label><input name="use-template" type="checkbox"> use template ?</label>
+        <input name="use-template" type="checkbox" onchange="change(this)"><label>use template ?</label>
         </div>
         <div class="template" style="display:none">
             <label>template:</label>
@@ -20,7 +20,7 @@
 </div>
 <div><button onclick="add()">+</button><button onclick="del()">-</button></div>
 
-<script>
+<script type="text/javascript">
 var template = '<div class="customblock"><label>custom post</label>'+
     '<div style="display:inline-block;width:49%;">'+
         '<label>categotyId</label>'+
