@@ -9,10 +9,6 @@
 			fs = require('fs'),
             app;
 
-    function getCustomPost(pid,callback){
-		topics.getTopicData([pid], callback);
-    }
-
     function loadWidgetTemplate(template, next) {
 		var __dirname = "./node_modules/nodebb-widget-custom-post";
 		var templateFile = path.resolve(__dirname, template);
@@ -45,20 +41,23 @@
 
 		try{
 			data = JSON.parse(data);
+			console.log(data)
 			pid = data.cid;
+			console.log(pid)
 		}catch(e){
 			callback(e);
 		}
+		
 		if(pid){
-			getCustomPost(pid, function(err, customPost) {
+			topics.getTopicData([pid], function(err,post){
 				if(err){
 					callback(err);
 				}
-				console.log(customPost);
-				app.render('widgets/custom-post',{data:customPost});
+				console.log(post);
+				app.render('widgets/custom-post',{data:post});
 
 				callback();
-			});
+			}); 
 		}else{
 			callback();
 		}
