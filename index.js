@@ -36,12 +36,13 @@
 		winston.info("render custom post " );
 
 		var data = params.data.data;
-		var cid = params.req.query.cid;
+		var cid = params.req.query.cid+"";
 		var pid;
 
 		try{
 			data = JSON.parse(data);
 			console.log(data)
+			console.log(cid)
 			pid = data.cid;
 			console.log(pid)
 		}catch(e){
