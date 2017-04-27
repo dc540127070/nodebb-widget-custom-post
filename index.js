@@ -49,6 +49,14 @@
 		winston.info(app);
 		winston.info(params);
 		
+		// function renderAdmin(req, res) {
+        //     res.render('admin/plugins/sso-qq', {
+        //         callbackURL: nconf.get('url') + '/auth/qq/callback'
+        //     });
+        // }
+        // data.router.get('/admin/plugins/sso-qq', data.middleware.admin.buildHeader, renderAdmin);
+        // data.router.get('/api/admin/plugins/sso-qq', renderAdmin);
+
 		// var data = params.data.data;
 		// try{
 		// 	data = JSON.parse(data);
@@ -56,7 +64,9 @@
 		// 	callback(e);
 		// }
         //  getCustomPost(params.data.data, function(err, customPost) {
-			app.render('widgets/custom-post', {data:params}, callback);
+			app.render('widgets/custom-post');
+
+			callback()
 		// });
      }
 
@@ -64,7 +74,7 @@
 		loadWidgetTemplate('./templates/widgets/admin/custom-post.tpl', function(templateData) {
             widgets = widgets.concat([
                 {
-                    widget: "custom post",
+                    widget: "custompost",
                     name: "custom post",
                     description: "Renders the custom post",
                     content: templateData
