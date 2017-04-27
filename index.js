@@ -53,11 +53,9 @@
 					if(err){
 						callback(err);
 					}
-					console.log(post)
 					app.render('widgets/custom-post',{data:post},callback);
 				}); 
 			}else{
-				console.log(data)
 				app.render('widgets/custom-post',{data:data},callback);
 			}
 		}else{
