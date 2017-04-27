@@ -10,9 +10,9 @@ var template = '<div class="customblock">'+
         '<input type="textarea" class="form-control" name="postId" placeholder="postId" />'+
     '</div>'+
     '<div class="checkbox">'+
-    '<input name="use-template" type="checkbox" onchange=\"$(this).parent().parent().find(".template").toggle()\"><label> use template ?</label>'+
+    '<input name="use-template" type="checkbox" onchange=\'$(this).parent().parent().find(".template").toggle()\'><label> use template ?</label>'+
     '</div>'+
-    '<div class="template" style="display:none">'+
+    '<div class="template" style="display:none;">'+
         '<label>template:</label>'+
         '<input type="textarea" class="form-control" name="template" placeholder="postId" />'+
     '</div>'+
@@ -33,15 +33,15 @@ var template = '<div class="customblock">'+
         <div class="checkbox">
         <input name="use-template" type="checkbox" onchange='$(this).parent().parent().find(".template").toggle()'><label>use template ?</label>
         </div>
-        <div class="template" style="display:none">
+        <div class="template" style="display:none;">
             <label>template:</label>
             <input type="textarea" class="form-control" name="template" placeholder="postId" />
         </div>
     </div>
 </div>
 <div>
-<button onclick='$("#custompost").append(template);'>+</button>
-<button onclick='var list=$("#custompost .customblock");if(list.length < 2)return;$(list[list.length-1]).remove();'>-</button>
+<div onclick='$("#custompost").append(template);'>+</div>
+<div onclick='$("#custompost .customblock").length>1&&$($("#custompost .customblock")[$("#custompost .customblock").length-1]).remove();'>-</div>
 </div>
 
 
