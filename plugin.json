@@ -9,8 +9,5 @@
         {"hook": "filter:widgets.getWidgets", "method": "defineWidgets"},
         {"hook": "filter:widget.render:custompost", "method": "renderCustomPost"}
 	],
-	"templates": "./templates",
-	"acpScripts": [
-		"./lib/index.js"
-	]
+	"templates": "./templates"
 }
