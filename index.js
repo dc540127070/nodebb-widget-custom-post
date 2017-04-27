@@ -37,12 +37,11 @@
 
 		var data = params.data.data;
 		var cid = params.req.query.cid+"";
-		var data;
 
 		try{
 			data = JSON.parse(data);
 
-			pid = data[cid];
+			data = data[cid];
 		}catch(e){
 			callback(e);
 		}
