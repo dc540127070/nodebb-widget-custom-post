@@ -38,6 +38,7 @@
 		var data = params.data.data;
 		var cid = params.req.query.cid+"";
 
+
 		try{
 			data = JSON.parse(data);
 
@@ -52,15 +53,12 @@
 					if(err){
 						callback(err);
 					}
+					console.log(post)
 					app.render('widgets/custom-post',{data:post},callback);
 				}); 
 			}else{
-				topics.getTopicData([data.pid], function(err,post){
-					if(err){
-						callback(err);
-					}
-					app.render('widgets/custom-post',{data:data},callback);
-				}); 
+				console.log(data)
+				app.render('widgets/custom-post',{data:data},callback);
 			}
 		}else{
 			callback();
