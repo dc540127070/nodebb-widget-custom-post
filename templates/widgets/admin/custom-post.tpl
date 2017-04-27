@@ -1,5 +1,6 @@
 <script type="text/javascript">
-var template = '<div class="customblock"><label>custom post</label>'+
+var template = '<div class="customblock">'+
+    '<div><label>custom post</label></div>'+
     '<div style="display:inline-block;width:49%;">'+
         '<label>categotyId</label>'+
         '<input type="textarea" class="form-control" name="categotyId" placeholder="categotyId" />'+
@@ -40,7 +41,7 @@ var template = '<div class="customblock"><label>custom post</label>'+
 </div>
 <div>
 <button onclick='$("#custompost").append(template);'>+</button>
-<button onclick="var list = $("#custompost .customblock");if(list.length < 2)return;$(list[list.length-1]).remove();">-</button>
+<button onclick='var list=$("#custompost .customblock");if(list.length < 2)return;$(list[list.length-1]).remove();'>-</button>
 </div>
 
 
