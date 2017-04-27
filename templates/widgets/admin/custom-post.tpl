@@ -1,6 +1,6 @@
 <div id="custompost">
     <div class="customblock">
-        <label>custom post</label>
+        <div><label>custom post</label></div>
         <div style="display:inline-block;width:49%;">
             <label>categotyId</label>
             <input type="textarea" class="form-control" name="categotyId" placeholder="categotyId" />
@@ -39,13 +39,12 @@ var template = '<div class="customblock"><label>custom post</label>'+
     '</div>'+
 '</div>';
 
-
 function add(){
     $("#custompost").append(template);
 }
 
 function del(){
-    var list = $("#custompost .customblock")
+    var list = $("#custompost .customblock");
     if(list.length < 2){
         return;
     }
