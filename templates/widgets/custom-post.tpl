@@ -1,1 +1,1 @@
-<div>123123</div>
+<div>{post.slug}</div>
