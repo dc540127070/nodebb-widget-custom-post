@@ -41,10 +41,8 @@
 
 		try{
 			data = JSON.parse(data);
-			console.log(data)
-			console.log(cid)
+
 			pid = data[cid];
-			console.log(pid)
 		}catch(e){
 			callback(e);
 		}
@@ -54,10 +52,7 @@
 				if(err){
 					callback(err);
 				}
-				console.log(post);
-				app.render('widgets/custom-post',{data:post});
-
-				callback();
+				app.render('widgets/custom-post',{data:post},callback);
 			}); 
 		}else{
 			callback();
