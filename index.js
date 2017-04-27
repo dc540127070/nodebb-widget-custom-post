@@ -45,7 +45,10 @@
 	};
 
     CustomPost.renderCustomPost = function(params,callback){
-		console.log(params);
+		winston.info("render post " );
+		winston.info(app);
+		winston.info(params);
+		
 		// var data = params.data.data;
 		// try{
 		// 	data = JSON.parse(data);
