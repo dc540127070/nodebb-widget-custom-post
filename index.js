@@ -60,7 +60,7 @@
 					if(err){
 						callback(err);
 					}
-					app.render('widgets/custom-post',{data:data.template},callback);
+					app.render('widgets/custom-post',{data:data},callback);
 				}); 
 			}
 		}else{

@@ -1,1 +1,1 @@
-<div>{post.slug}</div>
+<div>{data.slug?data.slug:data.template}</div>
