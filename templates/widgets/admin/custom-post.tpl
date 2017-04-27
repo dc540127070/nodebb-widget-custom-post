@@ -12,7 +12,7 @@ var template = '<div class="customblock">'+
     '<div class="checkbox">'+
     '<label><input name="use-template" type="checkbox" onchange=\'$(this).parent().parent().parent().find(".customtemplate").toggle()\'>use template ?</label>'+
     '</div>'+
-    '<div class="customtemplate" style="display:none;">'+
+    '<div class="customtemplate">'+
         '<label>template:</label>'+
         '<input type="textarea" class="form-control" name="customtemplate" placeholder="postId" />'+
     '</div>'+
@@ -39,9 +39,9 @@ var template = '<div class="customblock">'+
         </div>
     </div>
 </div>
-<div>
-<div onclick='$("#custompost").append(template);'>+</div>
-<div onclick='$("#custompost .customblock").length>1&&$($("#custompost .customblock")[$("#custompost .customblock").length-1]).remove();'>-</div>
+<div style="text-align: center;">
+<div style="display: inline-block;padding: 0px 8px;border: 1px #ccc solid;margin: 0px 10px;" onclick='$("#custompost").append(template);'>+</div>
+<div style="display: inline-block;padding: 0px 8px;border: 1px #ccc solid;margin: 0px 10px;" onclick='$("#custompost .customblock").length>1&&$($("#custompost .customblock")[$("#custompost .customblock").length-1]).remove();'>-</div>
 </div>
 
 
