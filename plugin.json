@@ -1,0 +1,16 @@
+{
+	"id": "nodebb-widget-custom-post",
+	"name": "custom post",
+	"description": "custom post",
+	"url": "https://github.com/exuan/nodebb-plugin-sso-auth-qq",
+	"library": "./index.js",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+        {"hook": "filter:widgets.getWidgets", "method": "defineWidgets"},
+        {"hook": "filter:widget.render:renderCustomPost", "method": "renderCustomPost"}
+	],
+	"templates": "./templates",
+	"acpScripts": [
+		"./lib/index.js"
+	]
+}
