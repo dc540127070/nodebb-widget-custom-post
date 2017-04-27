@@ -42,17 +42,11 @@
 		
 		app = data.router;
 
-		console.log(app);
-
         callback();
 	};
 
     CustomPost.renderCustomPost = function(params,callback){
 		winston.info("render post " );
-		console.log(app);
-		console.log(params);
-		
-
 		
 		// function renderAdmin(req, res) {
         //     res.render('admin/plugins/sso-qq', {
@@ -62,12 +56,14 @@
         // data.router.get('/admin/plugins/sso-qq', data.middleware.admin.buildHeader, renderAdmin);
         // data.router.get('/api/admin/plugins/sso-qq', renderAdmin);
 
-		// var data = params.data.data;
-		// try{
-		// 	data = JSON.parse(data);
-		// }catch(e){
-		// 	callback(e);
-		// }
+		var data = params.data.data;
+		var cid = params.req.query;
+		console.log(cid)
+		try{
+			data = JSON.parse(data);
+		}catch(e){
+			callback(e);
+		}
         //  getCustomPost(params.data.data, function(err, customPost) {
 			app.render('widgets/custom-post');
 
