@@ -2,7 +2,7 @@
 	"id": "nodebb-widget-custom-post",
 	"name": "custom post",
 	"description": "custom post",
-	"url": "https://github.com/exuan/nodebb-plugin-sso-auth-qq",
+	"url": "https://github.com/dc540127070/nodebb-widget-custom-post.git",
 	"library": "./index.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
