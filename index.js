@@ -9,18 +9,9 @@
 			fs = require('fs'),
             app;
 
-    // function getCustomPost(data,callback){
-	// 	let posts = [];
-	// 	for(var category in data){
-			
-	// 	}
-    //     db.getObjectField('category:post', cid, function (err, pid) {
-	// 		if (err) {
-	// 			return callback(err);
-	// 		}
-			
-	// 	});
-    // }
+    function getCustomPost(pid,callback){
+		topics.getTopicData([pid], callback);
+    }
 
     function loadWidgetTemplate(template, next) {
 		var __dirname = "./node_modules/nodebb-widget-custom-post";
@@ -46,29 +37,31 @@
 	};
 
     CustomPost.renderCustomPost = function(params,callback){
-		winston.info("render post " );
-		
-		// function renderAdmin(req, res) {
-        //     res.render('admin/plugins/sso-qq', {
-        //         callbackURL: nconf.get('url') + '/auth/qq/callback'
-        //     });
-        // }
-        // data.router.get('/admin/plugins/sso-qq', data.middleware.admin.buildHeader, renderAdmin);
-        // data.router.get('/api/admin/plugins/sso-qq', renderAdmin);
+		winston.info("render custom post " );
 
 		var data = params.data.data;
-		var cid = params.req.query;
-		console.log(cid)
+		var cid = params.req.query.cid;
+		var pid;
+
 		try{
 			data = JSON.parse(data);
+			pid = data.cid;
 		}catch(e){
 			callback(e);
 		}
-        //  getCustomPost(params.data.data, function(err, customPost) {
-			app.render('widgets/custom-post');
+		if(pid){
+			getCustomPost(pid, function(err, customPost) {
+				if(err){
+					callback(err);
+				}
+				console.log(customPost);
+				app.render('widgets/custom-post',{data:customPost});
 
-			callback()
-		// });
+				callback();
+			});
+		}else{
+			callback();
+		}
      }
 
     CustomPost.defineWidgets = function(widgets, callback) {
